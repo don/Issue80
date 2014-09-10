@@ -34,6 +34,18 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        
+        // Test Bluetooth Serial Plugin
+        bluetoothSerial.isEnabled(
+            function() { 
+                alert("Bluetooth is enabled");
+            },
+            function() { 
+                alert("Bluetooth is *not* enabled");
+            }
+        );    
+        
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
